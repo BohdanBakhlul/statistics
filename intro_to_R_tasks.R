@@ -93,4 +93,51 @@ xx
 
 #15
 (myList <- list(c("Bohdan", "Bakhlul"), 3.14, unique, seq(0, 1, 0.1)))
+myList[[3]] <- NULL
+myList[[1]] <- NULL
 myList
+Listva <- c(gamma(myList[[1]]), gamma(myList[[2]]))
+Listva
+
+#16
+vector1 <- 1:100
+sqrvector1 <- vector1^2
+sqrvector1
+ftable(sqrvector1 %% 10)
+
+#17
+numers <- 1:5
+outer(numers, numers, '*')
+
+#18
+library(matlib)
+library(Matrix)
+(matr <- matrix(c(1, 2, 1, 5, 0, 2, 3, 5, 1), nrow = 3, ncol = 3))
+rankMatrix(matr)
+det(matr)
+matr2 <- solve(matr)
+eigen(matr)
+colMeans(matr)
+rowMeans(matr)
+colSums(matr)
+rowSums(matr)
+matr3 <- matr * matr2
+matr3
+
+#19
+install.packages("MASS")
+library(MASS)
+data("birthwt")
+fac <- birthwt[, "ftv"]
+fac_factor <- factor(fac)
+fac_factor
+p <- levels(fac_factor)
+p
+factor(fac, levels = c("0", "1", "2 or more"))
+
+
+#20
+data("Cars93")
+f <- sapply(Cars93, is.factor)
+f
+table(Cars93[, "Origin"], Cars93[, "Factor"])
