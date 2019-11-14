@@ -15,13 +15,6 @@ d
 
 #5
 g <- 1:1000
-#for (i in g){
- # if (g[i] %% 2 == 0){
-  #g[i] <- 1/g[i]
-  #}
-#}
-#g
-
 g[seq(2, 1000, 2)] <- 1/g[seq(2, 1000, 2)]
 g
 
@@ -140,4 +133,76 @@ factor(fac, levels = c("0", "1", "2 or more"))
 data("Cars93")
 f <- sapply(Cars93, is.factor)
 f
-table(Cars93[, "Origin"], Cars93[, "Factor"])
+table(Cars93[, "Origin"], Cars93[, "Type"])
+
+#21
+install.packages("tidyverse")
+library(tidyverse)
+even_indexes<-seq(2,96,2)
+abcd <- read.csv(file="data_cancer.csv", header=TRUE, sep=",")
+abcd.new = abcd[seq(2,96,2), ]
+abcd.new
+abcd %>% filter(age > 50, lymph_nodes == 1)
+length(colnames(abcd))
+
+#23
+toRad <- function(angle) {
+  (angle * pi)/180
+}
+
+angles <- c(0, 30, 45, 60, 90)
+toRad(angles)
+
+
+anglesData <- data.frame(sin(toRad(angles)), cos(toRad(angles)), tan(toRad(angles)), atan(toRad(angles)))
+colnames(anglesData) <- c("sin", "cos", "tg", "ctg")
+anglesData
+
+#24
+x <- 1:5
+product <- 1
+for (i in x) {
+  product <- product * i
+}
+product
+
+product <- 1
+i <- 1
+while(i <= length(x)) {
+  product <- product * i
+  i <- i + 1
+}
+product
+
+product <- 1
+i <- 1
+repeat {
+  if(i > length(x)){
+    break
+  }
+  product <- product * i
+  i <- i + 1
+}
+product
+
+#25
+n <- 2:100
+r <- 1:99
+count <- 0
+for(i in n){
+  for(j in r){
+    if(i < j){
+      break
+    }
+    combination <- choose(i, j)
+    if(combination > 1000000) {
+      count <- count + 1
+    }
+  }
+}
+count
+
+#26
+vectt<-c(1,2,1)
+nice <- "nice"
+if (all(vectt==rev(vectt)) == TRUE) {print("Palindrome")}
