@@ -10,7 +10,7 @@
 #4. Illustrate the survey results using a bar chart and pie chart.
 #5. Illustrate the results of the survey using a bar chart, broken down by women and men.
 
-survey <- read.table("/media/kiryl/container/Учеба/AdamMickiewicz/3rdYear/1stSem/Statistics/descriptive statistics/survey.txt", header = TRUE)
+survey <- read.table("survey.txt", header = TRUE)
 survey
 results <- survey[3]
 print("Empirical distribution of a variable result:")
@@ -47,7 +47,7 @@ barplot(plot, beside = TRUE, legend = TRUE, col = rainbow(5))
 #4. Calculate the mean of the number of calls, the median of the number of calls, the standard
 #deviation of the number of calls, and the coefficient of variation of the number of calls.
 
-load("/media/kiryl/container/Учеба/AdamMickiewicz/3rdYear/1stSem/Statistics/descriptive statistics/telephone_exchange.RData")
+load("telephone_exchange.RData")
 telephone_exchange
 
 print("Empirical distribution of a variable telephone_exchange:")
@@ -77,7 +77,7 @@ sd(number) / mean(number) * 100
 #4. Calculate the mean, median, standard deviation, coefficient of variation, skewness and
 #kurtosis of the failure-free operation time.
 
-failures <- read.table("/media/kiryl/container/Учеба/AdamMickiewicz/3rdYear/1stSem/Statistics/descriptive statistics/failures.txt", header = TRUE)
+failures <- read.table("failures.txt", header = TRUE)
 failures
 head(failures)
 print("Empirical distribution of a variable failures:")
